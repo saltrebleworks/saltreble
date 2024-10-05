@@ -638,7 +638,7 @@ cursor: default;
   height: 20vw;
   /* top: 75%;
   left: 75%; */
-  margin: 5vw 0 0 7vw;
+  margin: -5vw 0 0 -7vw;
   background: url(https://i.pinimg.com/564x/85/24/d7/8524d785a8427617d475bf02d51710fc.jpg) no-repeat 50% 50%;
   background-size: cover;
   z-index: 1;
@@ -659,11 +659,11 @@ cursor: default;
   flex-basis: 1;
   position: relative;
   z-index: 2;
-  color: black;
+  color: white;
   mix-blend-mode: difference;
 }
 .project div {
-  color: black;
+  color: white;
 }
 
 .project-overlay {
