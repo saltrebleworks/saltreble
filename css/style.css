@@ -13,6 +13,7 @@ html, body {
     background-color: #F2F2F0;
     overflow-x: hidden;
     left: 0px;
+    color: #000;
 }
 img, video {
   max-width: 100vw !important;
@@ -64,7 +65,7 @@ img, video {
 
 nav {
   margin: 0 auto;
-  cursor: none;
+  cursor: none !important;
   text-align: center;
 }
 
@@ -660,6 +661,9 @@ cursor: default;
   z-index: 2;
   color: black;
   mix-blend-mode: difference;
+}
+.project div {
+  color: black;
 }
 
 .project-overlay {
