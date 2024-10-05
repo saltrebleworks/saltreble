@@ -81,7 +81,6 @@
         UI design
         and functionality.
         <br />
-        <a href="mailto:saltrebleworks@gmail.com?subject=I%20would%20like%20to%20build%20a%20website">Click here</a>
         <a href="#" style=" color: #353637; text-transform:uppercase; font-size: 1vw;">get started now</a>
       </h3>
     </section>
@@ -271,7 +270,14 @@ partner with a team that's truly invested in your success?
     </section>
   </div>
 
-
+<!-- AOS  -->
+  <!-- <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
+  <script id="rendered-js">
+    AOS.init({
+      duration: 1200
+    });
+  </script> -->
+<!-- slider -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
   <script id="rendered-js">
     var swiper = new Swiper(".swiper", {
@@ -287,7 +293,34 @@ partner with a team that's truly invested in your success?
     });
   </script>
 
-  
+  <!-- cursor  -->
+  <script id="rendered-js" >
+    const cursor = document.querySelector('#cursor');
+    let mouse = { x: 300, y: 300 };
+    let pos = { x: 0, y: 0 };
+    const speed = 0.1; // between 0 and 1
+    
+    const updatePosition = () => {
+      pos.x += (mouse.x - pos.x) * speed;
+      pos.y += (mouse.y - pos.y) * speed;
+      cursor.style.transform = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+    };
+    
+    const updateCoordinates = e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    
+    window.addEventListener('mousemove', updateCoordinates);
+    
+    function loop() {
+      updatePosition();
+      requestAnimationFrame(loop);
+    }
+    
+    requestAnimationFrame(loop);
+        </script>
+
         <!-- projects  -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
@@ -332,6 +365,7 @@ partner with a team that's truly invested in your success?
         });
             </script>
   <script src='js/script.js'></script>
+      
 </body>
 
 </html>
