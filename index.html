@@ -14,9 +14,13 @@
   <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'>
   
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.1/css/all.css">
+  
 </head>
 
 <body>
+  <div id="cursor">
+    <div class="cursor--inner"></div>
+  </div>
   <div class="navigation">
     <input type="checkbox" class="navigation__checkbox" id="nav-toggle">
     <label for="nav-toggle" class="navigation__button">
@@ -26,25 +30,27 @@
 
     <nav class="navigation__nav" role="navigation">
       <ul class="navigation__list">
-        <li class="navigation__item">
-          <a href="#" class="navigation__link"><span>01</span>HOME</a>
+        <li class="navigation__item hover-me">
+          <a href="#" class="navigation__link"><span>Home</span></a>
         </li>
-        <li class="navigation__item">
-          <a href="#" class="navigation__link"><span>02</span>PROJECTS</a>
+        <li class="navigation__item hover-me">
+          <a href="#" class="navigation__link"><span>About</span></a>
         </li>
-        <li class="navigation__item">
-          <a href="#" class="navigation__link"><span>03</span>OUR TEAM</a>
+        <li class="navigation__item hover-me">
+          <a href="#" class="navigation__link"><span>Projects</span></a>
         </li>
-        <li class="navigation__item">
-          <a href="#" class="navigation__link"><span>04</span>ABOUT</a>
+        <li class="navigation__item hover-me">
+          <a href="#" class="navigation__link"><span>Careers</span></a>
         </li>
-        <li class="navigation__item">
-          <a href="#" class="navigation__link"><span>05</span>CONTACT</a>
+        <li class="navigation__item hover-me">
+          <a href="#" class="navigation__link"><span>Contact</span></a>
         </li>
       </ul>
+  <div class="cursor"></div>
+
     </nav>
     <!-- herocontainer -->
-    <section id="herocontainer">
+    <section id="herocontainer"  data-aos="fade-up">
       <div class="ribbonhero">
         <img src="images/logov.svg">
       </div>
@@ -78,12 +84,13 @@
         <a href="#" style=" color: #353637; text-transform:uppercase; font-size: 1vw;">get started now</a>
       </h3>
     </section>
+
     <section id="Aboutus">
-<img src="images/sideaboutus.svg">
+<img src="images/sideaboutus.svg" data-aos="fade-left">
 
-      <h1>Let's Make an Impact Together.</h1> 
+      <h1 data-aos="fade-right">Let's Make an Impact Together.</h1> 
 
-      <h3>Do you have a brilliant idea ready to fuel your business growth? 
+      <h3 data-aos="fade-right">Do you have a brilliant idea ready to fuel your business growth? 
         <br/>
 <br/>
 Big agencies may overlook your unique needs, but we don't. 
@@ -100,8 +107,10 @@ partner with a team that's truly invested in your success?
 </h3>   
 </section>
 
-<section id="parallax">
+<section id="parallax" data-aos="fade-up">
 </section>
+
+
     <!-- Testimonial -->
     <!-- <section id="testimonial">
       <div class="content">
@@ -209,21 +218,48 @@ partner with a team that's truly invested in your success?
         </div>
       </div>
     </section> -->
+<section id="Project" data-aos="fade-up">
+  <div class="cursor"></div>
 
-    <section id="footer">
+  <div class="wrapper">
+    <div class="project-list">
+      <div class="project p-1">
+        <div class="project-title"><h1>Motionland</h1></div>
+        <div class="project-categ">Branding</div>
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project p-2">
+        <div class="project-title"><h1>Focus Reactive</h1></div>
+        <div class="project-categ">Photography</div>
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project p-3">
+        <div class="project-title"><h1>Aspect</h1></div>
+        <div class="project-categ">Web Design</div>
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project p-4">
+        <div class="project-title"><h1>Logo Mark</h1></div>
+        <div class="project-categ">Branding</div>
+        <div class="project-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="footer" data-aos="fade-up">
       <img src="images/footertext.svg" alt="">
       <br />
       <a href="#">saltreble@gmail.com</a>
       <br />
       <div class="footerjustify">
-        <span>© 2024-25 Crowdyflow Agency</span>
+        <span>Saltreble</span>
         <span class="footerjustifya">
-          <span>Agency</span>
+          <span>About</span>
+          <span>Projects</span>
           <span>Career</span>
-          <span>Privacy</span>
-          <span>Terms & Condition</span>
+          <span>Contact</span>
         </span>
-        <span style="font-size:1.5rem;">
+        <span style="font-size:1.5vw;">
           <i class="fab fa-facebook fa-fw"></i>
           <i class="fab fa-instagram fa-fw"></i>
           <i class="fab fa-twitter fa-fw"></i>
@@ -234,14 +270,14 @@ partner with a team that's truly invested in your success?
     </section>
   </div>
 
-
+<!-- AOS  -->
   <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
   <script id="rendered-js">
     AOS.init({
       duration: 1200
     });
   </script>
-
+<!-- slider -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
   <script id="rendered-js">
     var swiper = new Swiper(".swiper", {
@@ -256,6 +292,89 @@ partner with a team that's truly invested in your success?
       }
     });
   </script>
+
+  <!-- cursor  -->
+   <script>
+    const cursor2 = document.getElementById('cursor2');
+
+document.addEventListener('mousemove', (e) => {
+  cursor2.style.left = e.pageX + 'px';
+  cursor2.style.top = e.pageY + 'px';
+});
+   </script>
+  <script id="rendered-js" >
+    const cursor = document.querySelector('#cursor');
+    let mouse = { x: 300, y: 300 };
+    let pos = { x: 0, y: 0 };
+    const speed = 0.1; // between 0 and 1
+    
+    const updatePosition = () => {
+      pos.x += (mouse.x - pos.x) * speed;
+      pos.y += (mouse.y - pos.y) * speed;
+      cursor.style.transform = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+    };
+    
+    const updateCoordinates = e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    
+    window.addEventListener('mousemove', updateCoordinates);
+    
+    function loop() {
+      updatePosition();
+      requestAnimationFrame(loop);
+    }
+    
+    requestAnimationFrame(loop);
+        </script>
+    
+
+        <!-- projects  -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+              <script id="rendered-js" >
+        var $cursor = $(".cursor"),
+        $overlay = $(".project-overlay");
+        
+        function moveCircle(e) {
+          TweenLite.to($cursor, 0.5, {
+            css: {
+              left: e.pageX,
+              top: e.pageY },
+        
+            delay: 0.03 });
+        
+        }
+        
+        $(".p-1").hover(function () {
+          $(".cursor").css({ "background-image": "url(https://i.pinimg.com/564x/85/24/d7/8524d785a8427617d475bf02d51710fc.jpg)" });
+        });
+        
+        $(".p-2").hover(function () {
+          $(".cursor").css({ "background-image": "url(https://i.pinimg.com/564x/97/59/85/9759859a26a8f8195d1c4dd92f00cb73.jpg)" });
+        });
+        $(".p-3").hover(function () {
+          $(".cursor").css({ "background-image": "url(https://i.pinimg.com/564x/9c/52/81/9c528158c74da06541565671cfc2644b.jpg)" });
+        });
+        $(".p-4").hover(function () {
+          $(".cursor").css({ "background-image": "url(https://i.pinimg.com/564x/38/18/c3/3818c31969226e29a9dabd5e3cd0802a.jpg)" });
+        });
+        
+        var flag = false;
+        $($overlay).mousemove(function () {
+          flag = true;
+          TweenLite.to($cursor, 0.3, { scale: 1, autoAlpha: 1 });
+          $($overlay).on("mousemove", moveCircle);
+        });
+        
+        $($overlay).mouseout(function () {
+          flag = false;
+          TweenLite.to($cursor, 0.3, { scale: 0.1, autoAlpha: 0 });
+        });
+            </script>
+  <script src='js/script.js'></script>
+      
 </body>
 
 </html>
