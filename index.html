@@ -247,6 +247,7 @@ partner with a team that's truly invested in your success?
     </div>
   </div>
 </section>
+
     <section id="footer">
       <img src="images/footertext.svg" alt="">
       <br />
@@ -265,7 +266,7 @@ partner with a team that's truly invested in your success?
           <a href="https://www.instagram.com/saltrebleworks/"><i class="fab fa-instagram fa-fw"></i></a>
           <a href=""><i class="fab fa-twitter fa-fw"></i></a>
           <a href="https://github.com/saltrebleworks"><i class="fab fa-github fa-fw"></i></a>
-          <a href=""><i class="fab fa-linkedin fa-fw"></i></a>
+          <a href="https://www.linkedin.com/company/saltrebleworks/"><i class="fab fa-linkedin fa-fw"></i></a>
         </span>
       </div>
     </section>
@@ -287,6 +288,33 @@ partner with a team that's truly invested in your success?
     });
   </script>
 
+  <!-- cursor  -->
+  <script id="rendered-js" >
+    const cursor = document.querySelector('#cursor');
+    let mouse = { x: 300, y: 300 };
+    let pos = { x: 0, y: 0 };
+    const speed = 0.1; // between 0 and 1
+    
+    const updatePosition = () => {
+      pos.x += (mouse.x - pos.x) * speed;
+      pos.y += (mouse.y - pos.y) * speed;
+      cursor.style.transform = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+    };
+    
+    const updateCoordinates = e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    
+    window.addEventListener('mousemove', updateCoordinates);
+    
+    function loop() {
+      updatePosition();
+      requestAnimationFrame(loop);
+    }
+    
+    requestAnimationFrame(loop);
+        </script>
   
         <!-- projects  -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -300,8 +328,7 @@ partner with a team that's truly invested in your success?
             css: {
               left: e.pageX,
               top: e.pageY },
-        
-            delay: 0.03 });
+        });
         
         }
         

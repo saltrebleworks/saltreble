@@ -50,13 +50,11 @@ img, video {
   }
 
   #cursor .cursor--inner {
-    width: 5vw;
-    height: 5vw;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     border: solid 1px #1d213f;
-    box-shadow: 10px 10px 25px -16px rgba(0,0,0,0.75);
-
   }
 }
 
