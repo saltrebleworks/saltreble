@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Our Services Responsive Section - Elzero Practice #3 </title>
+
+    <link rel="canonical" href="https://codepen.io/peytondodd/pen/qBOrLPp">
+  
+  
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.6/css/all.css'>
+  
+<style>
+/*start global */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.heading h1:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 2px;
+    background: #BABABA;
+    margin-top: 4px;
+    
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+/* end global */
+
+/* start of our services section */
+
+#our-services {
+    background: #f6f6f6;
+    min-height: 100vh;
+    padding-top: 25vh;
+}
+
+/* OUR SEERVICES LEFT SIDE */
+
+#our-services .desc {
+    width: 33%;
+    float: left;
+}
+
+#our-services .desc .heading h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    margin-bottom: 30px;
+}
+
+#our-services .desc .text {
+    color: #BABABA;
+}
+
+/* OUR SERVICES RIGHT SIDE */
+
+#our-services .services {
+    width: 67%;
+    float: left;
+}
+
+#our-services .services .column {
+    float: left;
+    margin-right: 60px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+#our-services .services .column .service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background: #FFFFFF;
+    transition: all 0.1s ease;
+    margin-bottom: 7px;
+}
+
+#our-services .services .column .service:hover {
+    background: #28282e;
+    color: #fff;
+}
+
+#our-services .services .column .service:hover .service-icon {
+    color: #fff;
+}
+
+#our-services .services .column .service .service-desc {
+    transform: rotate(-45deg);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+#our-services .services .column .service .service-desc .service-icon  {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #f57469;
+}
+
+/* end of our services section */
+
+/* media query */
+
+@media all and (max-width: 967px) {
+    #our-services {
+        padding-top: 60px;
+    }
+    
+    #our-services .desc {
+        width: 100%;
+        float: none;
+        margin-bottom: 30px;
+    }
+    
+    #our-services .services {
+        width: 100%;
+    }
+    
+    #our-services .services .column {
+        transform: rotate(0deg);
+        margin-right: 10px;
+    }
+    
+    #our-services .services .column .service .service-desc {
+        transform: rotate(0deg);
+    }
+}
+</style> 
+  
+</head>
+
+<body translate="no">
+  <section id="our-services">
+  <div class="container">
+    <div class="desc">
+      <div class="heading">
+        <h1>Our Services</h1>
+      </div>
+      <div class="text">
+        <p>WHAT WE OFFER </p>
+      </div>
+    </div>
+    <div class="services">
+
+      
+      <div class="column" id="column-1">
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-flask">
+
+            </i>
+            <p class="service-txt">
+              LIGHT DUTY TOWING & RECOVERY
+            </p>                       
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-bullhorn">
+
+            </i>
+            <p class="service-txt">
+             WINCH OUTS
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon far fa-lightbulb">
+
+            </i>
+            <p class="service-txt">
+            ROADSIDE ASSISTANCE
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column" id="column-2">
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-wrench">
+
+            </i>
+            <p class="service-txt">
+              MEDIUM DUTY TOWING & RECOVERY
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-database">
+
+            </i>
+            <p class="service-txt">
+              EQUIPMENT HAULING
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-chart-pie">
+
+            </i>
+            <p class="service-txt">
+             motorcycle towing
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column" id="column-2">
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-tasks">
+
+            </i>
+            <p class="service-txt">
+             HEAVY DUTY TOWING & TRANSPORT
+            </p>                            
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-certificate">
+
+            </i>
+            <p class="service-txt">
+              ROTATOR & RECOVERY
+            </p>
+          </div>
+        </div>
+        <div class="service ">
+          <div class="service-desc">
+            <i class="service-icon">
+
+            </i>
+            <p class="service-txt">
+specialized transport
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column" id="column-2">
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-tasks">
+
+            </i>
+            <p class="service-txt">
+             EXTREAM OFFROAD RECOVERY
+            </p>                            
+          </div>
+        </div>
+        <div class="service">
+          <div class="service-desc">
+            <i class="service-icon fas fa-certificate">
+
+            </i>
+            <p class="service-txt">
+              POLICE TOWING & IMPOUND
+            </p>
+          </div>
+        </div>
+        <div class="service ">
+          <div class="service-desc">
+            <i class="service-icon">
+
+            </i>
+            <p class="service-txt">
+FORKLIFT SERVICE
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+    <div class="clear-fix"></div>
+  </div>
+  
+</section>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
+      <script id="rendered-js" >
+/*global $*/
+$(document).ready(function () {
+  "use strict";
+  var heading = $('#our-services .desc .heading h1'),
+  txt = $('#our-services .desc .text'),
+  serviceItem = $('#our-services .services .column .service'),
+  tl = new TimelineLite();
+
+  tl.
+  from(heading, 0.3, { opacity: 0, y: -20 }, '+=0.3').
+  from(txt, 0.3, { opacity: 0, y: -20 }).
+  staggerFrom(serviceItem, 0.2, { x: -10, autoAlpha: 0 }, 0.1);
+
+});
+    </script>
+
+  
+</body>
+
+</html>

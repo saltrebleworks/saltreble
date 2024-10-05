@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+  
+
+  <title>CodePen - Full Screen Overlay Hamburger Navigation Menu</title>
+
+    <link rel="canonical" href="https://codepen.io/designee/pen/NWjeqVJ">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Orbitron"
+            rel="stylesheet">
+  
+  
+  
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+h2{
+  padding: 100px;
+  color:#FFFFFF;
+  text-transform: lowercase;
+  font-size: 1em;
+}
+
+body {
+  background-color: #008000;
+  font-family: Montserrat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation__checkbox {
+  display: none;
+}
+
+.navigation__button {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 5rem;
+  width: 5rem;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 300;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__button {
+    top: 4rem;
+    right: 4rem;
+    height: 7rem;
+    width: 7rem;
+  }
+}
+
+.navigation__background {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: #0b4d00;
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+  transition: all 800ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__background {
+    top: 4.5rem;
+    right: 4.5rem;
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.navigation__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  opacity: 0;
+  width: 0;
+  visibility: hidden;
+  z-index: 200;
+  transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__list {
+  /*@include center;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  list-style: none;
+}
+
+.navigation__item {
+  margin: 1rem;
+}
+
+.navigation__link:link,
+.navigation__link:visited {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: #f4f4f4;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+@media (min-width: 768px) {
+  .navigation__link:link,
+  .navigation__link:visited {
+    font-size: 1.8rem;
+  }
+}
+
+.navigation__link span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.navigation__link:hover {
+  color: #c1d0d0;
+  transform: scale(1.1);
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.navigation__icon {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__icon {
+    margin-top: 3.5rem;
+  }
+}
+
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2px;
+  background-color: #4a676a;
+}
+
+@media (min-width: 768px) {
+  .navigation__icon,
+  .navigation__icon::before,
+  .navigation__icon::after {
+    width: 3rem;
+  }
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 200ms;
+}
+
+.navigation__icon::before {
+  top: -0.8rem;
+}
+
+.navigation__icon::after {
+  top: 0.8rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div class="navigation">
+  <input type="checkbox" class="navigation__checkbox" id="nav-toggle">
+  <label for="nav-toggle" class="navigation__button">
+    <span class="navigation__icon" aria-label="toggle navigation menu"></span>
+  </label>
+  <div class="navigation__background"></div>
+
+  <nav class="navigation__nav" role="navigation">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a href="#" class="navigation__link"><span>01</span>HOME</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link"><span>02</span>PROJECTS</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link"><span>03</span>OUR TEAM</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link"><span>04</span>ABOUT</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link"><span>05</span>CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+<h2>(Click on the Hamburger icon <br>to see the fullscreen navigation menu)</h2>
+  
+</div>
+  
+</body>
+
+</html>
